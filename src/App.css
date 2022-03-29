@@ -1,31 +1,62 @@
+* {
+  padding: 0;
+  margin:0;
+}
+
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #D2DFBA;
+  height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255); 
+}
+.img-banner {
+  /* margin-left: -890px; */
+  height: 300px;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.welcomePage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.card {
+  font-family: 'Avenir', cursive;
+  font-size: 110% ;
+  display: inline-block;
+  border: 4px solid #484545;
+  border-style: dotted;
+  border-radius: 25px;
+  background-image: url('./Images/AnimalCardBackground.png');
+  background-color: #D2DFBA;
+  padding:1rem;
+  width:300px;
+  height:400px;
+  margin-bottom: 20px;
+  margin:10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.card img {
+  width:9em;
+  height:9em;
+}
+.card-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 @keyframes App-logo-spin {

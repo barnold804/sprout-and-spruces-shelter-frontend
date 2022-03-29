@@ -5,7 +5,7 @@ function Comments() {
     return (
         <div>
             <CommentDisplay />
-            <form className="comments-form">
+            {/* <form className="comments-form">
                 <input 
                 type="text"
                 id="comment"
@@ -14,7 +14,7 @@ function Comments() {
                 onchange={""}
                 />
                 <button type="submit"> Submit </button>
-            </form>
+            </form> */}
         </div>
     )
 }
