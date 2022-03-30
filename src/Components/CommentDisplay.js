@@ -1,9 +1,10 @@
 import React from 'react'
 
-function CommentDisplay() {
+function CommentDisplay({oneComment}) {
+    // console.log(oneComment)
     return (
         <div className="comment-display">
-            {/* <button className="delete-Btn">X</button> */}
+            <h5>{oneComment.comments}</h5>
         </div> 
     )
 }

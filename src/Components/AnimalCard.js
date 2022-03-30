@@ -1,5 +1,5 @@
 import React from 'react';
-import Comments from './Comments'
+
 
 
 function AnimalCard({oneAnimal}) {
@@ -12,7 +12,6 @@ function AnimalCard({oneAnimal}) {
                 <h2>Breed: {oneAnimal.breed}</h2>
                 <h3>Age: {oneAnimal.age}</h3>
             </div>
-                <Comments oneAnimal={oneAnimal}/>
         </div>
     )
 }

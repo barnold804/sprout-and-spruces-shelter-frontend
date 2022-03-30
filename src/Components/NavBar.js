@@ -1,13 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { NavLink } from "react-router-dom";
 import Home from './Home';
 import AnimalContainer from './AnimalContainer';
 import Adopters from './Adopters';
 import AboutUs from './AboutUs';
+import Comments from './Comments';
+// import CommentDisplay from './CommentDisplay';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 
-function NavBar({animals}) {
+function NavBar({animals, commentArray}) {
+
+    const [comments, setComments] = useState("")
+    // const [commentArray, setCommentArray] = useState([])
+
+    // const renderComments = commentArray.map((comment) => <CommentDisplay key={comments.id} {...comment}/>)
+
+
+    // useEffect(()=> {
+    //     fetch('http://localhost:9292/comments')
+    //     .then(response => response.json())
+    //     .then(comments => setCommentArray(comments))
+    // }, [])
+
+    function handleCommentFormSubmit(e) {
+        e.preventDefault();
+        const formData = {
+            adopter_id: e.target.value,
+            comments: e.target.value,
+        };
+    
+        fetch('http://localhost:9292/comments', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify(formData),
+        })
+            .then((response) => response.json())
+            .then((formData) => {;
+                setComments([...comments, formData])
+            });
+            // clear inputs
+    }
 
 
     const routes = [
@@ -28,6 +63,11 @@ function NavBar({animals}) {
             main: () => <Adopters />,
         },
         {
+            path: "/comments",
+            sidebar: () => <div></div>,
+            main: () => <Comments handleCommentFormSubmit={handleCommentFormSubmit} commentArray={commentArray} />,
+        },
+        {
             path: "/about-us",
             sidebar: () => <div></div>,
             main: () => <AboutUs />,
@@ -37,6 +77,7 @@ function NavBar({animals}) {
         return (
             <Router>
                 <div style={{ display: "flex" }}>
+                {/* {renderComments} */}
                 <div
                     style={{
                     padding: "25px",
@@ -53,6 +94,9 @@ function NavBar({animals}) {
                     </li>
                     <li className='adopters-link'>
                         <Link to="/adopters">Interested in Adopting?</Link>
+                    </li>
+                    <li className='comments-link'>
+                        <Link to="/comments">Leave us a Comment</Link>
                     </li>
                     <li className='about-link'>
                         <Link to="/about-us">About Us</Link>
