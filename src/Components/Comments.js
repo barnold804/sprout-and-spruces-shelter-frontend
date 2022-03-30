@@ -14,6 +14,8 @@ function Comments({handleCommentFormSubmit, commentArray}) {
         return <CommentDisplay key={oneComment.id} oneComment={oneComment} />
     })
 
+    
+
 
     return (
         <div>
