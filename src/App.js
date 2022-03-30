@@ -29,7 +29,6 @@ function App() {
         </h2>
       </header>
       <NavBar animals={animals} />
-      {/* <AnimalContainer animals={animals}/> */}
     </div>
   );
 }
