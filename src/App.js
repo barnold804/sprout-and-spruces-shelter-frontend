@@ -14,11 +14,28 @@ function App() {
 
   const [animals, setAnimals] = useState([])
 
+  const API = 'http://localhost:9292/animals'
+
   useEffect(() => {
-      fetch('http://localhost:9292/animals')
+      fetch(API)
       .then(response => response.json())
       .then(animals => setAnimals(animals))
   }, [])
+
+  function handleComments() {
+    fetch(API, { 
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        comments: comments,
+        animal_id: animal_id,
+        adopter_id: adopter_id
+    })
+  })
+    .then(r => r.json())
+    .then(data => console.log(data))
+    }
+}
 
 
   return (

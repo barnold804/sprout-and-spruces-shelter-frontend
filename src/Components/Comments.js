@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentDisplay from './CommentDisplay';
 
-function Comments() {
+function Comments({ oneAnimal }) {
     return (
         <div>
             <CommentDisplay />

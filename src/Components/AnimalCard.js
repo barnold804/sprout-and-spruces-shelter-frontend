@@ -12,7 +12,7 @@ function AnimalCard({oneAnimal}) {
                 <h2>Breed: {oneAnimal.breed}</h2>
                 <h3>Age: {oneAnimal.age}</h3>
             </div>
-                <Comments />
+                <Comments oneAnimal={oneAnimal}/>
         </div>
     )
 }
