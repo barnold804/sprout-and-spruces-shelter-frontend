@@ -28,6 +28,10 @@ function App() {
     .then(comments => setCommentArray(comments))
 }, [])
 
+  function handleAddComment (newComment) {
+    setCommentArray([...commentArray, newComment])
+  }
+
 
 
   return (
@@ -37,7 +41,7 @@ function App() {
           <img className='img-banner' src={require('./Images/HeaderBanner.png')} alt="Shelter-Banner"/> 
         </h2>
       </header>
-      <NavBar animals={animals} commentArray={commentArray}/>
+      <NavBar animals={animals} commentArray={commentArray} onAddComment={handleAddComment}/>
     </div>
   );
 }

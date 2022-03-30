@@ -9,7 +9,7 @@ import Comments from './Comments';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 
-function NavBar({animals, commentArray}) {
+function NavBar({animals, commentArray, onAddComment}) {
 
     const [comments, setComments] = useState("")
     // const [commentArray, setCommentArray] = useState([])
@@ -25,23 +25,26 @@ function NavBar({animals, commentArray}) {
 
     function handleCommentFormSubmit(e) {
         e.preventDefault();
-        const formData = {
-            adopter_id: e.target.value,
-            comments: e.target.value,
-        };
+        // const formData = {
+        //     adopter_id: e.target.value,
+        //     comments: e.target.value,
+        // };
     
         fetch('http://localhost:9292/comments', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             },
-            body:JSON.stringify(formData),
+            body:JSON.stringify({
+                comments: comments
+            }),
         })
             .then((response) => response.json())
-            .then((formData) => {;
-                setComments([...comments, formData])
+            .then((newComment) => {
+                onAddComment(newComment)
+                setComments("")
             });
-            // clear inputs
+
     }
 
 
