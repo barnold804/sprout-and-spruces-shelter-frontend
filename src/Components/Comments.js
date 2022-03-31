@@ -19,11 +19,11 @@ function Comments({handleCommentFormSubmit, commentArray, name, setName, comment
                 </div>
 
                 <div className='comment-box-comment'>
-                    <span>Comment:</span>
-                    <input value={comments} onChange={(e)=>handleChange(e)} />
+                    <h1 className='leave-comment'>Leave a Comment</h1>
+                    <input className='comment-input-box' value={comments} onChange={(e)=>handleChange(e)} />
                 </div>
                 
-                <button className= 'bttn-card' type='submit'> Submit Comment</button>
+                <button className= 'bttn-card' type='submit'> Add Comment</button>
             </form>
 
             <div className='comment-box'>

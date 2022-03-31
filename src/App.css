@@ -69,3 +69,72 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.comments-form {
+  margin-top: 20px;
+  background: #EBEADF;
+  color: white;
+  width: 900px;
+  margin: auto;
+}
+.bttn-card {
+  background-color: #8C5B3E;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-right: -150px;
+  transition-duration: 0.4s;
+}
+.bttn-card:hover {
+  color: white;
+}
+.comment-input-box {
+  height: 80px;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.comment-display {
+  border: 1px solid;
+  padding: 15px;
+}
+
+.delete-bttn {
+  background-color: #8C5B3E;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.new-adopters-form {
+  font-family: 'Avenir', cursive;
+  margin: 20px;
+  width: 350px;
+  padding: 15px;
+  border: 1px solid;
+}
+
+.interested-adopt {
+  background-image: url('./Images/InterestedAdopt.png');
+  background-size: 1300px; 
+  background-repeat: no-repeat;
+  height: 800px;
+}
+.adopter-bttn {
+  background-color: #757A7A;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
