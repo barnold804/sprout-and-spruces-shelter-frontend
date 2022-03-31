@@ -13,7 +13,7 @@ function Adopters() {
 
     function handleInquiryFormSubmit(e) {
         e.preventDefault();
-        alert('Your Inquiry has been Received!');
+        alert('Are you sure you would like to submit your Inquiry?');
         
         fetch('http://localhost:9292/adopters', {
             method: 'POST',
@@ -53,18 +53,19 @@ function Adopters() {
                 <input type="submit" />
             </form> */}
                 <form className="new-adopters-form" onSubmit={(e)=>{handleInquiryFormSubmit(e)}}>
-
+                <h1>Inquiry Form</h1>
+                <h4>Please fill all entries.</h4>
                 <div className='adopter-form-boxes'>
                     <div className='adopter-name'>
-                        <span>Name: </span>
+                        <label>Name :</label>
                             <input type="text" placeholder="Name" value={adoptersName} onChange={(e) => setAdoptersName(e.target.value)}/>
                     </div>
                     <div className='adopter-email'>
-                        <span>Email: </span>
+                        <label>Email :</label>
                             <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className='Phone Number'>
-                        <span>Phone Number: </span>
+                        <label>Phone Number :</label>
                             <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                 </div>

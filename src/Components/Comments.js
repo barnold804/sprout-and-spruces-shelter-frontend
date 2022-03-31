@@ -2,12 +2,10 @@ import React from 'react';
 import CommentDisplay from './CommentDisplay';
 
 
-function Comments({handleCommentFormSubmit, commentArray, name, setName, comments, handleChange, onDelete}) {
+function Comments({handleCommentFormSubmit, commentArray, name, setName, comments, handleChange, onDelete, onEditComment}) {
 
-    
 
-    const showComments = commentArray.map((oneComment) => <CommentDisplay key={oneComment.id} oneComment={oneComment} handleDelete={onDelete} id={oneComment.id} />)
-
+    const showComments = commentArray.map((oneComment) => <CommentDisplay key={oneComment.id} oneComment={oneComment} handleDelete={onDelete} id={oneComment.id} handleEditComment={onEditComment}/>)
 
     return (
         <div>

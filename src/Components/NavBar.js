@@ -7,7 +7,7 @@ import Comments from './Comments';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 
-function NavBar({animals, commentArray, onAddComment, onDelete}) {
+function NavBar({animals, commentArray, onAddComment, onDelete, onEditComment}) {
 
     const [name, setName] = useState("");
     const [comments, setComments] = useState("")
@@ -15,7 +15,6 @@ function NavBar({animals, commentArray, onAddComment, onDelete}) {
     function handleCommentFormSubmit(e) {
         e.preventDefault();
         
-    
         fetch('http://localhost:9292/comments', {
             method: 'POST',
             headers: {
@@ -67,6 +66,7 @@ function NavBar({animals, commentArray, onAddComment, onDelete}) {
                 comments={comments}
                 handleChange={handleChange}
                 onDelete={onDelete}
+                // onEditComment={onEditComment}
                 />,
         },
         {
