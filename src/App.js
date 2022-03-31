@@ -32,8 +32,8 @@ function App() {
     setCommentArray([...commentArray, newComment])
   }
 
-  function handleDelete(comments) {
-    const deletedComment = commentArray.filter((comment) => comment.id !== comments)        
+  function handleDelete(id) {
+    const deletedComment = commentArray.filter((comment) => comment.id !== id)        
     setCommentArray(deletedComment);
 };
 
@@ -48,7 +48,7 @@ function App() {
       animals={animals} 
       commentArray={commentArray} 
       onAddComment={handleAddComment}
-      ondelete={handleDelete}
+      onDelete={handleDelete}
       />
     </div>
   );

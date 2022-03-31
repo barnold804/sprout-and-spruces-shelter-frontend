@@ -64,4 +64,8 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-
+.comment-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

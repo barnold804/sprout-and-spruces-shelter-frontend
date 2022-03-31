@@ -6,7 +6,7 @@ function CommentDisplay({oneComment, handleDelete, id}) {
         fetch(`http://localhost:9292/comments/${id}` , {
             method: 'DELETE',
         })
-        handleDelete()
+        handleDelete(id)
     };
     
     return (

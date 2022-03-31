@@ -11,7 +11,7 @@ function NavBar({animals, commentArray, onAddComment, onDelete}) {
 
     const [name, setName] = useState("");
     const [comments, setComments] = useState("")
-    
+
     function handleCommentFormSubmit(e) {
         e.preventDefault();
         
@@ -31,6 +31,12 @@ function NavBar({animals, commentArray, onAddComment, onDelete}) {
                 setComments("")
             });
 
+    }
+
+    const handleChange = (e) => {
+        console.log(e.target.value);
+        setComments(e.target.value);
+        console.log(comments);
     }
 
     const routes = [
@@ -59,7 +65,7 @@ function NavBar({animals, commentArray, onAddComment, onDelete}) {
                 name={name}
                 setName={setName}
                 comments={comments}
-                setComments={setComments}
+                handleChange={handleChange}
                 onDelete={onDelete}
                 />,
         },
@@ -118,12 +124,13 @@ function NavBar({animals, commentArray, onAddComment, onDelete}) {
                         key={index}
                         path={route.path}
                         exact={route.exact}
-                        children={<route.main />}
+                        children={route.main}
                         />
                     ))}
                     </Switch>
                 </div>
                 </div>
+                
         </Router>
         );
 }
