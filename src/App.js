@@ -15,7 +15,7 @@ function App() {
   const [animals, setAnimals] = useState([])
   const [commentArray, setCommentArray] = useState([])
 
-  // const [comments, setComments] = useState("")
+  const [comments, setComments] = useState("")
 
   useEffect(() => {
       fetch('http://localhost:9292/animals')
@@ -38,16 +38,16 @@ function App() {
     setCommentArray(deletedComment);
   };
 
-  // function handleEditComment(updatedComment) {
-  //   const updatedComments = comments.map( comment => {
-  //     if (comment.id === updatedComment.id) {
-  //       return updatedComment
-  //     } else {
-  //       return comments
-  //     }
-  //   })
-  //   setComments(updatedComments)
-  // }
+  function handleEditComment(updatedComment) {
+    const updatedComments = comments.map( comment => {
+      if (comment.id === updatedComment.id) {
+        return updatedComment
+      } else {
+        return comments
+      }
+    })
+    setComments(updatedComments)
+  }
 
   return (
     <div className="App">
@@ -61,7 +61,7 @@ function App() {
       commentArray={commentArray} 
       onAddComment={handleAddComment}
       onDelete={handleDelete}
-      // onEditComment={handleEditComment}
+      onEditComment={handleEditComment}
       />
     </div>
   );

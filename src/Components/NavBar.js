@@ -66,7 +66,7 @@ function NavBar({animals, commentArray, onAddComment, onDelete, onEditComment}) 
                 comments={comments}
                 handleChange={handleChange}
                 onDelete={onDelete}
-                // onEditComment={onEditComment}
+                onEditComment={onEditComment}
                 />,
         },
         {
