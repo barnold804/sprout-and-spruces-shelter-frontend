@@ -32,7 +32,10 @@ function App() {
     setCommentArray([...commentArray, newComment])
   }
 
-
+  function handleDelete(comments) {
+    const deletedComment = commentArray.filter((comment) => comment.id !== comments)        
+    setCommentArray(deletedComment);
+};
 
   return (
     <div className="App">
@@ -41,7 +44,12 @@ function App() {
           <img className='img-banner' src={require('./Images/HeaderBanner.png')} alt="Shelter-Banner"/> 
         </h2>
       </header>
-      <NavBar animals={animals} commentArray={commentArray} onAddComment={handleAddComment}/>
+      <NavBar 
+      animals={animals} 
+      commentArray={commentArray} 
+      onAddComment={handleAddComment}
+      ondelete={handleDelete}
+      />
     </div>
   );
 }

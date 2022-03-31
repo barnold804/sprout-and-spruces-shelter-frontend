@@ -1,18 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CommentDisplay from './CommentDisplay';
 
 
-function Comments({handleCommentFormSubmit, commentArray}) {
+function Comments({handleCommentFormSubmit, commentArray, name, setName, comments, setComments,onDelete}) {
 
-    const [comments, setComments] = useState("");
-    // console.log(commentArray)
-    const [name, setName] = useState("");
+    
 
-
-    const showComments = commentArray.map((oneComment) => {
-        // console.log(oneComment)
-        return <CommentDisplay key={oneComment.id} oneComment={oneComment} />
-    })
+    const showComments = commentArray.map((oneComment) => <CommentDisplay key={oneComment.id} oneComment={oneComment} handleDelete={onDelete} id={oneComment.id} />)
 
     
 
@@ -25,8 +19,8 @@ function Comments({handleCommentFormSubmit, commentArray}) {
             
             <form className="comments-form" onSubmit={(e)=>{handleCommentFormSubmit(e)}}>
                 <div className='comment-box-name'>
-                    <span>Name:</span>
-                        <input type = 'text' name = 'name' value = {name} onChange={(e) => setName(e.target.value)} />
+                    {/* <span>Name:</span>
+                        <input type = 'text' name = 'name' value = {name} onChange={(e) => setName(e.target.value)} /> */}
                 </div>
 
                 <div className='comment-box-comment'>

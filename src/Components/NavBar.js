@@ -1,34 +1,20 @@
 import React, { useState } from 'react'
-// import { NavLink } from "react-router-dom";
 import Home from './Home';
 import AnimalContainer from './AnimalContainer';
 import Adopters from './Adopters';
 import AboutUs from './AboutUs';
 import Comments from './Comments';
-// import CommentDisplay from './CommentDisplay';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 
-function NavBar({animals, commentArray, onAddComment}) {
+function NavBar({animals, commentArray, onAddComment, onDelete}) {
 
+    const [name, setName] = useState("");
     const [comments, setComments] = useState("")
-    // const [commentArray, setCommentArray] = useState([])
-
-    // const renderComments = commentArray.map((comment) => <CommentDisplay key={comments.id} {...comment}/>)
-
-
-    // useEffect(()=> {
-    //     fetch('http://localhost:9292/comments')
-    //     .then(response => response.json())
-    //     .then(comments => setCommentArray(comments))
-    // }, [])
-
+    
     function handleCommentFormSubmit(e) {
         e.preventDefault();
-        // const formData = {
-        //     adopter_id: e.target.value,
-        //     comments: e.target.value,
-        // };
+        
     
         fetch('http://localhost:9292/comments', {
             method: 'POST',
@@ -46,7 +32,6 @@ function NavBar({animals, commentArray, onAddComment}) {
             });
 
     }
-
 
     const routes = [
         {
@@ -68,7 +53,15 @@ function NavBar({animals, commentArray, onAddComment}) {
         {
             path: "/comments",
             sidebar: () => <div></div>,
-            main: () => <Comments handleCommentFormSubmit={handleCommentFormSubmit} commentArray={commentArray} />,
+            main: () => <Comments 
+                handleCommentFormSubmit={handleCommentFormSubmit} 
+                commentArray={commentArray} 
+                name={name}
+                setName={setName}
+                comments={comments}
+                setComments={setComments}
+                onDelete={onDelete}
+                />,
         },
         {
             path: "/about-us",
