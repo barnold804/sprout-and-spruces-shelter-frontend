@@ -24,9 +24,11 @@
   color: #61dafb;
 }
 .welcome-image {
-  height: 400px;
-  width: 1200px;
-  margin-left: -300px;
+  background-image: url('./Images/MissionStatement.png');
+  background-size: 1300px; 
+  background-repeat: no-repeat;
+  height: 1000px;
+  background-color: #D2DFBA;
 }
 .welcomePage {
   display: block;
@@ -35,9 +37,11 @@
   width: 100%;
 }
 .about-image {
-  height: 400px;
-  width: 1200px;
-  margin-left: -300px;
+  background-image: url('./Images/AboutUsBIG.png');
+  background-size: 1300px; 
+  background-repeat: no-repeat;
+  height: 1000px;
+  background-color: #EBE8DD;
 }
 .card {
   font-family: 'Livvic', sans-serif;
@@ -49,7 +53,7 @@
   background-image: url('./Images/AdoptMeBG.png');
   background-size: 415px;
   background-repeat: no-repeat;
-  background-color: #D2DFBA;
+  background-color: #EBE8DD;
   padding:1rem;
   width:310px;
   height:420px;
@@ -115,6 +119,16 @@
   display: inline-block;
   font-size: 16px;
 }
+.edit-bttn {
+  background-color: #8C5B3E;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
 .new-adopters-form {
   font-family: 'Avenir', cursive;
@@ -122,13 +136,34 @@
   width: 350px;
   padding: 15px;
   border: 1px solid;
+  display: inline-block;
+  margin-top: 350px;
+}
+.name-holder {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.email-holder {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.phone-holder {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 .interested-adopt {
   background-image: url('./Images/InterestedAdopt.png');
   background-size: 1300px; 
   background-repeat: no-repeat;
-  height: 800px;
+  height: 1000px;
+  background-color: #EBE8DD;
 }
 .adopter-bttn {
   background-color: #757A7A;

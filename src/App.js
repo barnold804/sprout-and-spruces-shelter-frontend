@@ -15,7 +15,7 @@ function App() {
   const [animals, setAnimals] = useState([])
   const [commentArray, setCommentArray] = useState([])
 
-  const [comments, setComments] = useState("")
+  // const [comments, setComments] = useState("")
 
   useEffect(() => {
       fetch('http://localhost:9292/animals')

@@ -58,15 +58,15 @@ function Adopters() {
                 <div className='adopter-form-boxes'>
                     <div className='adopter-name'>
                         <label>Name :</label>
-                            <input type="text" placeholder="Name" value={adoptersName} onChange={(e) => setAdoptersName(e.target.value)}/>
+                            <input className='name-holder' type="text" placeholder="Name" value={adoptersName} onChange={(e) => setAdoptersName(e.target.value)}/>
                     </div>
                     <div className='adopter-email'>
                         <label>Email :</label>
-                            <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                            <input className='email-holder' type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className='Phone Number'>
                         <label>Phone Number :</label>
-                            <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                            <input className='phone-holder' type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                 </div>
                 
