@@ -16,7 +16,7 @@ function Comments({handleCommentFormSubmit, commentArray, name, setName, comment
     />)
 
     return (
-        <div>
+        <div className='comments-bg'>
             <form className="comments-form" onSubmit={(e)=>{handleCommentFormSubmit(e)}}>
                 <div className='comment-box-comment'>
                     <h1 className='leave-comment'>Leave a Comment</h1>

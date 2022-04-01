@@ -2,23 +2,48 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className='footer'> 
-            {/* <p>Sticky Footer Test</p> */}
-            {/* <div id='social'>
+        <footer className='footer-distributed'> 
+            <div class="footer-left">
 
-                <a className='fa fa-google' rel='noopener noreferrer' href="mailto:sample@gmail.com"></a>
-                <a className='fa fa-instagram' target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/sample/?hl=undefined'></a>
+            <h3>Sprout's & <span>Spruce's Shelter</span></h3>
 
-                </div>
+            <p class="footer-company-name">Sprout's & Spruce's Shelter © 2022</p>
+            </div>
 
-                <div id='elements'>
+            <div class="footer-center">
 
-                <img id='phone' src={phone} />
-                <p>+32 696 69 69 69</p>
+            <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>4648 Ebert Road</span> Lake Deonville, Idaho</p>
+            </div>
 
-                <img id='email' src={email} /> <p>sample@gmail.com</p>
-                <img id='pin' src={pin} /> <p>Antwerp , Belgium</p>
-            </div> */}
+            <div>
+            <i class="fa fa-phone"></i>
+            <p>480-795-2279</p>
+            </div>
+
+            <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:info@sproutandspruce.org">info@sproutandspruce.org</a></p>
+            </div>
+
+            </div>
+
+            <div class="footer-right">
+
+            <p class="footer-company-about">
+            <span>About the shelter</span>
+            It’s our mission to improve and save animal lives by promoting quality care and compassion through adoption and education.
+            </p>
+
+            <div class="footer-icons">
+
+            {/* <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a> */}
+
+            </div>
+
+            </div>
         </footer>
     )
 }
