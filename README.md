@@ -1,4 +1,4 @@
-# Phase 3 Project (Brian A, Jane K, Tony S) 
+# Phase 3 Project (Jane K, Brian A, Tony S) 
 
 ## Sprout's & Spruce's Animal Shelter
 
