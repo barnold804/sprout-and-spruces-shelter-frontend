@@ -13,7 +13,7 @@ function Adopters() {
 
     function handleInquiryFormSubmit(e) {
         e.preventDefault();
-        alert('Are you sure you would like to submit your Inquiry?');
+        alert('We have received your inquiry!');
         
         fetch('http://localhost:9292/adopters', {
             method: 'POST',
@@ -33,25 +33,10 @@ function Adopters() {
                 setEmail("")
                 setPhone("")
             });
-
     }
 
     return (
         <div className='interested-adopt'> 
-            {/* <h2>
-                Interested in Adopting? Fill out the below Inquiry Form! 
-            </h2> */}
-            {/* <h4>
-            ​The first step in the adoption process is to fill out the below inquiry form. Inquiry forms are processed on a first come/ best-fit basis and generally take 48-72 business hours to review. We will contact you for a phone interview!
-            </h4> */}
-            {/* <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="Name" {...register("Name", {required: true, maxLength: 80})} />
-                <input type="text" placeholder="Email" {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} />
-                <input type="tel" placeholder="Phone Number" {...register("Phone Number", {required: true, maxLength: 12})} />
-                <input type="text" placeholder="Interested Pet" {...register("Interested Pet", {})} />
-
-                <input type="submit" />
-            </form> */}
                 <form className="new-adopters-form" onSubmit={(e)=>{handleInquiryFormSubmit(e)}}>
                 <h1>Inquiry Form</h1>
                 <h4>Please fill all entries.</h4>

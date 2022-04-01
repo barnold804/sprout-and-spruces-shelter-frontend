@@ -1,21 +1,14 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
-// import Shelter from './Components/Shelter';
-// import Comments from './Components/Comments';
-// import AnimalContainer from './Components/AnimalContainer';
-// import Home from './Components/Home';
 import NavBar from './Components/NavBar';
-// import Adopters from './Components/Adopters';
-// import AboutUs from './Components/AboutUs';
-// import { Route, Switch } from "react-router-dom";
-// import Adopters from './Components/Adopters';
+import Footer from './Components/Footer';
 
 function App() {
 
   const [animals, setAnimals] = useState([])
   const [commentArray, setCommentArray] = useState([])
-
   const [comments, setComments] = useState("")
+  // const [commentEditBool, setCommentEditBool] = (false)
 
   useEffect(() => {
       fetch('http://localhost:9292/animals')
@@ -38,16 +31,44 @@ function App() {
     setCommentArray(deletedComment);
   };
 
-  function handleEditComment(updatedComment) {
-    const updatedComments = comments.map( comment => {
-      if (comment.id === updatedComment.id) {
-        return updatedComment
-      } else {
-        return comments
-      }
-    })
-    setComments(updatedComments)
+  function handleClickEditBtn(e) {
+    e.preventDefault()
+    const clickedCommentText = e.target.parentElement.parentElement.parentElement.firstChild.innerText;
+    setComments(clickedCommentText)
   }
+
+  const handleChangeEditComment = (e) => {
+    setComments(e.target.value);
+  }
+
+  function onSubmitEditComment(e) {
+    e.preventDefault()
+    const id = e.target.id;
+    fetch(`http://localhost:9292/comments/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            comments: comments, 
+        }),
+    })
+    .then((r) => r.json())
+    .then(data => {
+      const updatedArray = commentArray.map((comment) => {
+        if (comment.id === data.id) {
+          return data
+        } else {
+          return comment
+        }
+      })
+      setCommentArray(updatedArray);
+    })
+    // fetch('http://localhost:9292/comments')
+    // .then(response => response.json())
+    // .then(comments => setCommentArray(comments))
+  }
+
 
   return (
     <div className="App">
@@ -57,12 +78,15 @@ function App() {
         </h2>
       </header>
       <NavBar 
-      animals={animals} 
-      commentArray={commentArray} 
-      onAddComment={handleAddComment}
-      onDelete={handleDelete}
-      onEditComment={handleEditComment}
+        animals={animals} 
+        commentArray={commentArray} 
+        onAddComment={handleAddComment}
+        onDelete={handleDelete}
+        handleClickEditBtn={handleClickEditBtn}
+        handleChangeEditComment={handleChangeEditComment}
+        onSubmitEditComment={onSubmitEditComment}
       />
+      <Footer />
     </div>
   );
 }

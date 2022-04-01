@@ -7,7 +7,7 @@ import Comments from './Comments';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 
-function NavBar({animals, commentArray, onAddComment, onDelete, onEditComment}) {
+function NavBar({ animals, commentArray, onAddComment, onDelete,handleClickEditBtn, handleChangeEditComment, onSubmitEditComment }) {
 
     const [name, setName] = useState("");
     const [comments, setComments] = useState("")
@@ -29,7 +29,6 @@ function NavBar({animals, commentArray, onAddComment, onDelete, onEditComment}) 
                 onAddComment(newComment)
                 setComments("")
             });
-
     }
 
     const handleChange = (e) => {
@@ -66,7 +65,9 @@ function NavBar({animals, commentArray, onAddComment, onDelete, onEditComment}) 
                 comments={comments}
                 handleChange={handleChange}
                 onDelete={onDelete}
-                onEditComment={onEditComment}
+                handleClickEditBtn={handleClickEditBtn}
+                handleChangeEditComment={handleChangeEditComment}
+                onSubmitEditComment={onSubmitEditComment}
                 />,
         },
         {
@@ -87,7 +88,7 @@ function NavBar({animals, commentArray, onAddComment, onDelete, onEditComment}) 
                     background: "#f0f0f0",
                     }}
                 >
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
+                    <ul style={{ listStyleType: "none", padding: 0 }} className="navlinks">
                     <li className='home-link'>
                         <Link to="/">Home</Link>
                     </li>

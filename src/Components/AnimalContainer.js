@@ -1,10 +1,7 @@
 import React from 'react';
 import AnimalCard from './AnimalCard';
 
-
-
 function AnimalContainer({animals}) {
-
 
     const showAnimals = animals.map((oneAnimal) => {
         return <AnimalCard key={oneAnimal.id} oneAnimal={oneAnimal} />

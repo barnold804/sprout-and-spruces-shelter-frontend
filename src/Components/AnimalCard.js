@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 function AnimalCard({oneAnimal}) {
 
     return (

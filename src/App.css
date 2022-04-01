@@ -1,14 +1,9 @@
-/* * {
-  padding: 0;
-  margin:0;
-} */
-
 .App {
   text-align: center;
 }
 .App-header {
   background-color: #D2DFBA;
-  height: 350px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,13 +69,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  flex-direction: column;
+  width: 900px;
+  margin: auto;
 }
 .comments-form {
   margin-top: 20px;
   background: #EBEADF;
-  color: white;
+  color: #8C5B3E;
   width: 900px;
   margin: auto;
+  position: relative;
+}
+.one-commment-display {
+  margin-bottom: 15px;
+  font-size: large;
 }
 .bttn-card {
   background-color: #8C5B3E;
@@ -107,6 +110,11 @@
 .comment-display {
   border: 1px solid;
   padding: 15px;
+  margin: 20px;
+}
+.leave-comment {
+  padding: 15px;
+  font-family: 'Livvic', sans-serif;
 }
 
 .delete-bttn {
@@ -118,6 +126,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin-right: 15px;
 }
 .edit-bttn {
   background-color: #8C5B3E;
@@ -129,7 +138,26 @@
   display: inline-block;
   font-size: 16px;
 }
-
+.edit-comment-input {
+  margin: 20px;
+  width: 350px;
+  padding: 15px;
+  border: 1px solid;
+  /* display: inline-block;
+  margin-top: 350px; */
+}
+.save-button {
+  background-color: #8C5B3E;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 15px;
+  height: 35.88px;
+}
 .new-adopters-form {
   font-family: 'Avenir', cursive;
   margin: 20px;
@@ -138,6 +166,10 @@
   border: 1px solid;
   display: inline-block;
   margin-top: 350px;
+  /* position: absolute;
+  transform: translate(-50%, -50%);
+  top:40%;
+  left: 50%; */
 }
 .name-holder {
   width: 100%;
@@ -157,13 +189,14 @@
   margin: 8px 0;
   box-sizing: border-box;
 }
-
 .interested-adopt {
   background-image: url('./Images/InterestedAdopt.png');
   background-size: 1300px; 
   background-repeat: no-repeat;
   height: 1000px;
   background-color: #EBE8DD;
+  /* background-position: center;
+  position: relative; */
 }
 .adopter-bttn {
   background-color: #757A7A;
@@ -195,3 +228,18 @@
   font-family: 'Livvic', sans-serif;
   font-size: 120%;
 }
+.navlinks li {
+  margin-bottom: 50px;
+  padding: 15px;
+  border: 2px solid;
+}
+/* .footer {
+  background-color: #EBE8DD;
+  border-top:2px solid #757A7A;
+  position: fixed;
+  height: 125px;
+  width: 100%;
+  bottom: 0;
+  color: white;
+  font-size: 25px;
+} */
